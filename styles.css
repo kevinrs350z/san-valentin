@@ -56,6 +56,36 @@ body {
   font-size: 1.05rem;
 }
 
+.intro__heart {
+  width: 18px;
+  height: 18px;
+  margin: 12px auto 0;
+  background: linear-gradient(135deg, #ff7fb8, #ff4f9a);
+  transform: rotate(-45deg);
+  position: relative;
+  filter: drop-shadow(0 4px 8px rgba(255, 95, 162, 0.35));
+}
+
+.intro__heart::before,
+.intro__heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.intro__heart::before {
+  top: -9px;
+  left: 0;
+}
+
+.intro__heart::after {
+  left: 9px;
+  top: 0;
+}
+
 @keyframes introFloat {
   0%,
   100% {
