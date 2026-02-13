@@ -1,6 +1,7 @@
 const photoButton = document.querySelector(".photo__button");
 const reveal = document.querySelector(".reveal");
 const floatingHearts = document.querySelector(".floating-hearts");
+const fireworks = document.querySelector(".fireworks");
 const intro = document.querySelector(".intro");
 const card = document.querySelector(".card");
 let ambientStarted = false;
@@ -43,11 +44,38 @@ const burstHearts = () => {
   }
 };
 
+const launchFireworks = () => {
+  const frame = document.querySelector(".photo__frame");
+  const rect = frame.getBoundingClientRect();
+  const originX = rect.left + rect.width / 2;
+  const originY = rect.top + rect.height / 2;
+
+  for (let i = 0; i < 14; i += 1) {
+    const heart = document.createElement("span");
+    heart.className = "firework-heart";
+
+    const size = Math.random() * 8 + 12;
+    const dx = (Math.random() - 0.5) * 160;
+    const dy = (Math.random() - 0.5) * 160;
+    heart.style.width = `${size}px`;
+    heart.style.height = `${size}px`;
+    heart.style.left = `${originX}px`;
+    heart.style.top = `${originY}px`;
+    heart.style.setProperty("--dx", `${dx}px`);
+    heart.style.setProperty("--dy", `${dy}px`);
+    heart.style.animationDuration = `${Math.random() * 400 + 800}ms`;
+
+    fireworks.appendChild(heart);
+    setTimeout(() => heart.remove(), 1300);
+  }
+};
+
 const acceptInvitation = () => {
   reveal.hidden = false;
   photoButton.disabled = true;
   photoButton.textContent = "¡Dijo que sí!";
   burstHearts();
+  launchFireworks();
 };
 
 const showCard = () => {
