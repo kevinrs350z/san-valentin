@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación de San Valentín</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="intro" role="dialog" aria-modal="true">
+      <div class="intro__content">
+        <p class="intro__title">San Valentín</p>
+        <p class="intro__subtitle">Presiona cualquier tecla para continuar</p>
+      </div>
+    </div>
+
+    <main class="card" aria-live="polite">
+      <header class="card__header">
+        <div class="spark" aria-hidden="true"></div>
+        <h1>Mi invitación especial</h1>
+        <p class="subtitle">Para la persona que hace mi mundo más bonito</p>
+      </header>
+
+      <section class="message">
+        <p>
+          Hoy quiero darte un mensaje dulce y didáctico: cada detalle cuenta, cada
+          latido suma y cada sonrisa nos acerca a un recuerdo inolvidable.
+        </p>
+        <p>
+          ¿Te gustaría celebrar conmigo este <strong>14 de febrero</strong> y
+          crear un momento que sea solo nuestro?
+        </p>
+      </section>
+
+      <section class="photo">
+        <div class="photo__frame">
+          <img src="assets/san%20v.jpeg" alt="Nuestra foto especial" />
+          <button class="photo__button" type="button">
+            ¿Aceptas ser mi San Valentín?
+          </button>
+        </div>
+        <p class="photo__note">Con todo mi cariño y un mar de corazones.</p>
+      </section>
+
+      <section class="invite">
+        <div class="invite__box" role="group" aria-label="Invitación">
+          <p class="invite__title">¡Estás invitada!</p>
+          <p class="invite__text">Una tarde de risas, cariño y sorpresas.</p>
+        </div>
+      </section>
+
+      <section class="reveal" hidden>
+        <p class="reveal__title">¡Qué emoción!</p>
+        <p class="reveal__text">
+          Gracias por decir que sí. Prometo un día lleno de detalles, ternura y mucho
+          cariño.
+        </p>
+        <div class="reveal__hearts" aria-hidden="true">
+          <span class="heart"></span>
+          <span class="heart"></span>
+          <span class="heart"></span>
+          <span class="heart"></span>
+        </div>
+      </section>
+
+      <footer class="card__footer">
+        <p>Con todo mi cariño,</p>
+        <p class="signature">De parte de Kevin, tu persona especial</p>
+      </footer>
+    </main>
+
+    <div class="floating-hearts" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
