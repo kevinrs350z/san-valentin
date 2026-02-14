@@ -50,9 +50,12 @@ const launchFireworks = () => {
   const originX = rect.left + rect.width / 2;
   const originY = rect.top + rect.height / 2;
 
-  for (let i = 0; i < 14; i += 1) {
+  const variants = ["variant-1", "variant-2", "variant-3", "variant-4", ""];
+  for (let i = 0; i < 24; i += 1) {
     const heart = document.createElement("span");
     heart.className = "firework-heart";
+    const variant = variants[Math.floor(Math.random() * variants.length)];
+    if (variant) heart.classList.add(variant);
 
     const size = Math.random() * 8 + 12;
     const dx = (Math.random() - 0.5) * 160;
